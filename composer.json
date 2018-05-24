@@ -1,0 +1,11 @@
+{
+	"name": "maclof/omnipay-omni-capital",
+	"autoload": {
+		"psr-4": {
+			"Omnipay\\OmniCapital\\" : "src/"
+		}
+	},
+	"require": {
+		"omnipay/common": "~2.0"
+	}
+}
