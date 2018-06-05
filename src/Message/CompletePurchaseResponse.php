@@ -8,6 +8,6 @@ class CompletePurchaseResponse extends PurchaseResponse
 			return false;
 		}
 	
-		return $this->data['query']['Status'] === 'SIGN DOCUMENTS';
+		return $this->data['query']['Status'] === 'ORDER FULFILLED';
 	}
 }
