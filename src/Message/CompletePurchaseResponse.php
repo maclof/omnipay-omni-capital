@@ -10,4 +10,9 @@ class CompletePurchaseResponse extends PurchaseResponse
 	
 		return $this->data['query']['Status'] === 'ORDER FULFILLED';
 	}
+
+	public function isRedirect()
+	{
+		return false;
+	}
 }
