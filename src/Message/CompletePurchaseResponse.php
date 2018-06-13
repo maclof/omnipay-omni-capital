@@ -8,7 +8,11 @@ class CompletePurchaseResponse extends PurchaseResponse
 			return false;
 		}
 	
-		return $this->data['request']['Status'] === 'ORDER FULFILLED';
+		if ($this->data['request']['Status'] === 'ORDER FULFILLED') {
+			return true;
+		} elseif ($this->data['request']['Status'] === 'CREDIT CHECK DECLINED') {
+			return false;
+		}
 	}
 
 	public function isRedirect()
