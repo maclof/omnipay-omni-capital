@@ -4,11 +4,11 @@ class CompletePurchaseResponse extends PurchaseResponse
 {
 	public function isSuccessful()
 	{
-		if ($this->data['installationId'] !== $this->data['query']['InstallationID']) {
+		if ($this->data['installationId'] !== $this->data['request']['InstallationID']) {
 			return false;
 		}
 	
-		return $this->data['query']['Status'] === 'ORDER FULFILLED';
+		return $this->data['request']['Status'] === 'ORDER FULFILLED';
 	}
 
 	public function isRedirect()
