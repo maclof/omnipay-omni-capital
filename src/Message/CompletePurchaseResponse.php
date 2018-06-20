@@ -7,11 +7,28 @@ class CompletePurchaseResponse extends PurchaseResponse
 		if ($this->data['installationId'] !== $this->data['request']['InstallationID']) {
 			return false;
 		}
-	
-		if ($this->data['request']['Status'] === 'ORDER FULFILLED') {
-			return true;
-		} elseif ($this->data['request']['Status'] === 'CREDIT CHECK DECLINED') {
-			return false;
+
+		switch ($this->data['request']['Status']) {
+			case 'ORDER FULFILLED':
+				return 'finance-paid';
+				break;
+
+			case 'APPROVED':
+			case 'AWAITING FULFILMENT':
+				return 'finance-accepted';
+				break;
+
+			case 'SIGN DOCUMENTS':
+				return 'finance-pending';
+				break;
+
+			case 'CREDIT CHECK REFERRED':
+				return 'finance-referred';
+				break;
+
+			case 'CREDIT CHECK DECLINED':
+				return 'finance-declined';
+				break;
 		}
 	}
 
