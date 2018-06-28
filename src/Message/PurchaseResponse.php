@@ -33,7 +33,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
 			'Identification[RetailerUniqueRef]' => $this->data['transactionId'],
 			'Goods[0][Description]'             => $this->data['description'],
 			'Goods[0][Price]'                   => $this->data['amount'],
-			'Finance[Code]'                     => $this->data['financeCode'],
+			'Finance[Code]'                     => $this->data['financeProduct'],
 			'Finance[Deposit]'                  => $this->data['amount'] / 10,
 		];
 

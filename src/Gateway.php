@@ -15,7 +15,7 @@ class Gateway extends AbstractGateway
 		return [
 			'installation_id' => '',
 			'api_key'         => '',
-			'finance_code'    => '',
+			'finance_product' => '',
 		];
 	}
 
@@ -39,14 +39,14 @@ class Gateway extends AbstractGateway
 		return $this->setParameter('api_key', $value);
 	}
 
-	public function getFinanceCode()
+	public function getFinanceProduct()
 	{
-		return $this->getParameter('finance_code');
+		return $this->getParameter('finance_product');
 	}
 
-	public function setFinanceCode($value)
+	public function setFinanceProduct($value)
 	{
-		return $this->setParameter('finance_code', $value);
+		return $this->setParameter('finance_product', $value);
 	}
 
 	public function purchase(array $parameters = [])

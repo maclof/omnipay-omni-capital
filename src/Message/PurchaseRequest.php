@@ -27,14 +27,14 @@ class PurchaseRequest extends AbstractRequest
 		return $this->setParameter('api_key', $value);
 	}
 
-	public function getFinanceCode()
+	public function getFinanceProduct()
 	{
-		return $this->getParameter('finance_code');
+		return $this->getParameter('finance_product');
 	}
 
-	public function setFinanceCode($value)
+	public function setFinanceProduct($value)
 	{
-		return $this->setParameter('finance_code', $value);
+		return $this->setParameter('finance_product', $value);
 	}
 
 	public function getData()
@@ -42,7 +42,7 @@ class PurchaseRequest extends AbstractRequest
 		return [
 			'installationId' => $this->getInstallationId(),
 			'apiKey'         => $this->getApiKey(),
-			'financeCode'    => $this->getFinanceCode(),
+			'financeProduct' => $this->getFinanceProduct(),
 			'transactionId'  => $this->getTransactionId(),
 			'amount'         => abs($this->getAmount()),
 			'description'    => $this->getDescription(),
