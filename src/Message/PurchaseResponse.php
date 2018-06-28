@@ -34,7 +34,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
 			'Goods[0][Description]'             => $this->data['description'],
 			'Goods[0][Price]'                   => $this->data['amount'],
 			'Finance[Code]'                     => $this->data['financeProduct'],
-			'Finance[Deposit]'                  => $this->data['amount'] / 10,
+			'Finance[Deposit]'                  => ceil($this->data['amount'] / 10),
 		];
 
 		return $data;
