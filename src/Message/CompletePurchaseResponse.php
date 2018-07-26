@@ -10,11 +10,11 @@ class CompletePurchaseResponse extends PurchaseResponse
 
 		switch ($this->data['request']['Status']) {
 			case 'ORDER FULFILLED':
+			case 'AWAITING FULFILMENT':
 				return 'finance-paid';
 				break;
 
 			case 'APPROVED':
-			case 'AWAITING FULFILMENT':
 				return 'finance-accepted';
 				break;
 
